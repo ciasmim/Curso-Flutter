@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3c24179-f4eb-4d49-a21b-904201e0c658" name="Changes" comment="" />
+    <list default="true" id="c3c24179-f4eb-4d49-a21b-904201e0c658" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alura_flutter_curso_1-Aula_2/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/alura_flutter_curso_1-Aula_2/lib/main.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +15,9 @@
   </component>
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -34,6 +40,7 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "master",
     "io.flutter.reload.alreadyRun": "true",
     "kotlin-language-version-configured": "true",
     "settings.editor.selected.configurable": "preferences.pluginManager",

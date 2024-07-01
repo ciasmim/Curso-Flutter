@@ -20,10 +20,18 @@ class MyApp extends StatelessWidget {
           ),
           body: ListView(
             children: [
-              Task('Aprender Flutter', 'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large', 2),
-              Task('Clonar Nubank', 'https://logodownload.org/wp-content/uploads/2019/08/nubank-logo-2.png', 3),
-              Task('Nova receita', 'https://i.pinimg.com/564x/60/58/ee/6058ee20f52d75cd95933d15e28bbcd3.jpg', 4),
-
+              Task(
+                  'Aprender Flutter',
+                  'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large',
+                  2),
+              Task(
+                  'Clonar Nubank',
+                  'https://logodownload.org/wp-content/uploads/2019/08/nubank-logo-2.png',
+                  3),
+              Task(
+                  'Nova receita',
+                  'https://i.pinimg.com/564x/60/58/ee/6058ee20f52d75cd95933d15e28bbcd3.jpg',
+                  4),
             ],
           ),
           floatingActionButton: FloatingActionButton(onPressed: () {}),
@@ -36,7 +44,7 @@ class Task extends StatefulWidget {
   final String foto;
   final int dificuldade;
 
-  const Task(this.nome, this.foto, this.dificuldade , {Key? key});
+  const Task(this.nome, this.foto, this.dificuldade, {Key? key});
 
   @override
   State<Task> createState() => _TaskState();
@@ -53,7 +61,10 @@ class _TaskState extends State<Task> {
         child: Stack(
           children: [
             Container(
-              color: Colors.cyan,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(4),
+                color: Colors.cyan,
+              ),
               height: 140,
             ),
             Column(
@@ -83,18 +94,47 @@ class _TaskState extends State<Task> {
                                   widget.nome,
                                   style: TextStyle(
                                     fontSize: 24,
-                                    overflow: TextOverflow.ellipsis, //para nao extourar o widget com frases grandes
+                                    overflow: TextOverflow
+                                        .ellipsis, //para nao extourar o widget com frases grandes
                                   ),
                                 )),
-                            Row(
-                              children: [
-                                Icon(Icons.star, size: 15,color: (widget.dificuldade >= 1) ? Colors.blue : Colors.blue [100],),
-                                Icon(Icons.star, size: 15,color: (widget.dificuldade >= 2) ? Colors.blue : Colors.blue [100],),
-                                Icon(Icons.star, size: 15,color: (widget.dificuldade >= 3) ? Colors.blue : Colors.blue [100],),
-                                Icon(Icons.star, size: 15,color: (widget.dificuldade >= 4) ? Colors.blue : Colors.blue [100],),
-                                Icon(Icons.star, size: 15,color: (widget.dificuldade >= 5) ? Colors.blue : Colors.blue [100],),
-                              ]
-                            ),
+                            Row(children: [
+                              Icon(
+                                Icons.star,
+                                size: 15,
+                                color: (widget.dificuldade >= 1)
+                                    ? Colors.blue
+                                    : Colors.blue[100],
+                              ),
+                              Icon(
+                                Icons.star,
+                                size: 15,
+                                color: (widget.dificuldade >= 2)
+                                    ? Colors.blue
+                                    : Colors.blue[100],
+                              ),
+                              Icon(
+                                Icons.star,
+                                size: 15,
+                                color: (widget.dificuldade >= 3)
+                                    ? Colors.blue
+                                    : Colors.blue[100],
+                              ),
+                              Icon(
+                                Icons.star,
+                                size: 15,
+                                color: (widget.dificuldade >= 4)
+                                    ? Colors.blue
+                                    : Colors.blue[100],
+                              ),
+                              Icon(
+                                Icons.star,
+                                size: 15,
+                                color: (widget.dificuldade >= 5)
+                                    ? Colors.blue
+                                    : Colors.blue[100],
+                              ),
+                            ]),
                           ],
                         ),
                         ElevatedButton(
@@ -118,7 +158,9 @@ class _TaskState extends State<Task> {
                       child: Container(
                         child: LinearProgressIndicator(
                           color: Colors.lightGreenAccent,
-                          value: nivel / 10,
+                          value: (widget.dificuldade > 0)
+                              ? (nivel / widget.dificuldade) / 10
+                              : 1,
                         ),
                         width: 200,
                       ),
